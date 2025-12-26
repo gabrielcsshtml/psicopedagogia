@@ -19,15 +19,38 @@ body {
   padding: 20px;
 }
 
-/* HEADER / HERO */
+/* HERO */
 .hero {
-  background: linear-gradient(135deg, #ffe9d6, #e8f6f3);
-  min-height: 90vh;
+  background: linear-gradient(135deg, #fff1df, #eaf7f4);
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
 }
 
-/* LOGO NO CANTO SUPERIOR ESQUERDO */
+/* FORMAS DECORATIVAS (INFANTIL SUAVE) */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.25;
+}
+
+.shape-1 {
+  width: 300px;
+  height: 300px;
+  background: #ffd6a5;
+  top: -80px;
+  right: -80px;
+}
+
+.shape-2 {
+  width: 220px;
+  height: 220px;
+  background: #c7ede6;
+  bottom: -60px;
+  left: -60px;
+}
+
+/* LOGO */
 .logo {
   position: absolute;
   top: 25px;
@@ -39,37 +62,38 @@ body {
 }
 
 .logo img {
-  width: 85px; /* LOGO MAIOR */
-  height: auto;
+  width: 90px;
 }
 
 .logo span {
-  font-size: 1.35rem;
-  font-weight: bold;
-  color: #5a8f7b;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #4e8f7b;
   white-space: nowrap;
 }
 
 /* CONTEÚDO CENTRAL */
 .hero-content {
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 /* TEXTO */
 .hero h1 {
-  font-size: 2.6rem;
-  color: #5a8f7b;
+  font-size: 2.8rem;
+  color: #4e8f7b;
   margin-bottom: 20px;
 }
 
 .hero p {
-  max-width: 620px;
-  margin: 0 auto 30px;
-  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto 35px;
+  font-size: 1.15rem;
   color: #555;
 }
 
@@ -77,45 +101,48 @@ body {
 .actions {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 
 .btn {
-  padding: 14px 28px;
-  border-radius: 30px;
+  padding: 15px 32px;
+  border-radius: 40px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   transition: 0.3s ease;
+  font-size: 1rem;
 }
 
 .primary {
-  background: #5a8f7b;
-  color: white;
+  background: #4e8f7b;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(78, 143, 123, 0.25);
 }
 
 .primary:hover {
-  background: #4a7b69;
+  background: #3f7766;
 }
 
 .secondary {
-  border: 2px solid #5a8f7b;
-  color: #5a8f7b;
+  border: 2px solid #4e8f7b;
+  color: #4e8f7b;
+  background: #ffffffaa;
 }
 
 .secondary:hover {
-  background: #5a8f7b;
+  background: #4e8f7b;
   color: white;
 }
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
 
   .logo {
-    top: 20px;
+    top: 18px;
     left: 20px;
   }
 
