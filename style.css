@@ -32,6 +32,7 @@ body {
   position: absolute;
   border-radius: 50%;
   opacity: 0.25;
+  z-index: 1;
 }
 
 .shape-1 {
@@ -50,7 +51,7 @@ body {
   left: -60px;
 }
 
-/* LOGO */
+/* LOGO TOPO ESQUERDO */
 .logo {
   position: absolute;
   top: 25px;
@@ -63,6 +64,7 @@ body {
 
 .logo img {
   width: 90px;
+  height: auto;
 }
 
 .logo span {
@@ -114,6 +116,7 @@ body {
   font-size: 1rem;
 }
 
+/* BOTÃO PRINCIPAL */
 .primary {
   background: #4e8f7b;
   color: #fff;
@@ -124,6 +127,7 @@ body {
   background: #3f7766;
 }
 
+/* BOTÃO SECUNDÁRIO */
 .secondary {
   border: 2px solid #4e8f7b;
   color: #4e8f7b;
