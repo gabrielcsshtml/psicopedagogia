@@ -13,6 +13,7 @@ body {
   line-height: 1.6;
 }
 
+/* CONTAINER */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -21,34 +22,40 @@ body {
 
 /* HERO */
 .hero {
-  background: linear-gradient(135deg, #fff1df, #eaf7f4);
+  background: linear-gradient(
+    135deg,
+    #fff1df 0%,
+    #eaf7f4 60%,
+    #ffffff 100%
+  );
   min-height: 100vh;
   position: relative;
   overflow: hidden;
 }
 
-/* FORMAS DECORATIVAS (INFANTIL SUAVE) */
+/* FORMAS DECORATIVAS (INFANTIL + MODERNO) */
 .shape {
   position: absolute;
   border-radius: 50%;
-  opacity: 0.25;
+  opacity: 0.35;
+  filter: blur(2px);
   z-index: 1;
 }
 
 .shape-1 {
-  width: 300px;
-  height: 300px;
+  width: 340px;
+  height: 340px;
   background: #ffd6a5;
-  top: -80px;
-  right: -80px;
+  top: -120px;
+  right: -120px;
 }
 
 .shape-2 {
-  width: 220px;
-  height: 220px;
+  width: 260px;
+  height: 260px;
   background: #c7ede6;
-  bottom: -60px;
-  left: -60px;
+  bottom: -100px;
+  left: -100px;
 }
 
 /* LOGO TOPO ESQUERDO */
@@ -87,15 +94,16 @@ body {
 
 /* TEXTO */
 .hero h1 {
-  font-size: 2.8rem;
+  font-size: 2.9rem;
   color: #4e8f7b;
   margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .hero p {
-  max-width: 650px;
+  max-width: 680px;
   margin: 0 auto 35px;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: #555;
 }
 
@@ -108,35 +116,37 @@ body {
 }
 
 .btn {
-  padding: 15px 32px;
-  border-radius: 40px;
+  padding: 16px 36px;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s ease;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
 /* BOTÃO PRINCIPAL */
 .primary {
   background: #4e8f7b;
   color: #fff;
-  box-shadow: 0 6px 18px rgba(78, 143, 123, 0.25);
+  box-shadow: 0 8px 20px rgba(78, 143, 123, 0.25);
 }
 
 .primary:hover {
   background: #3f7766;
+  transform: translateY(-2px);
 }
 
 /* BOTÃO SECUNDÁRIO */
 .secondary {
   border: 2px solid #4e8f7b;
   color: #4e8f7b;
-  background: #ffffffaa;
+  background: #ffffffcc;
 }
 
 .secondary:hover {
   background: #4e8f7b;
   color: white;
+  transform: translateY(-2px);
 }
 
 /* RESPONSIVO */
