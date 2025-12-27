@@ -307,3 +307,22 @@ body {
     font-size: 1rem;
   }
 }
+
+/* ===============================
+   PÁGINAS INTERNAS (SEM HERO)
+================================ */
+.page {
+  padding-top: 40px;
+}
+
+/* remove sensação de menu gigante */
+.page h1:first-child {
+  margin-top: 0;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .page {
+    padding-top: 20px;
+  }
+}
