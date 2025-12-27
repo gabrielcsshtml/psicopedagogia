@@ -316,3 +316,157 @@ body {
     padding-top: 20px;
   }
 }
+/* ===============================
+   CONTACTO – CLÍNICA PREMIUM
+================================ */
+
+.contact-hero {
+  background: linear-gradient(135deg, #eaf7f4, #fff1df);
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  background: #c7ede6;
+  border-radius: 50%;
+  top: -120px;
+  left: -120px;
+  opacity: 0.35;
+}
+
+.contact-hero::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: #ffd6a5;
+  border-radius: 50%;
+  bottom: -100px;
+  right: -100px;
+  opacity: 0.35;
+}
+
+.contact-hero h1 {
+  text-align: center;
+  color: #4e8f7b;
+  font-size: 2.6rem;
+  margin-bottom: 15px;
+}
+
+.contact-hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.15rem;
+  color: #555;
+}
+
+/* BLOCO PRINCIPAL */
+.contact-section {
+  background: #f7fbf9;
+  padding: 70px 0 90px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 45px;
+  align-items: stretch;
+}
+
+/* FORMULÁRIO */
+.contact-form {
+  background: white;
+  padding: 45px;
+  border-radius: 35px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+}
+
+.contact-form h2 {
+  color: #4e8f7b;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.contact-form p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px 20px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #4e8f7b;
+}
+
+.contact-form button {
+  align-self: flex-start;
+}
+
+/* BLOCO INSTITUCIONAL */
+.contact-info {
+  background: linear-gradient(135deg, #ffffff, #eaf7f4);
+  padding: 45px;
+  border-radius: 35px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 22px;
+}
+
+.contact-info h3 {
+  color: #4e8f7b;
+  font-size: 1.6rem;
+}
+
+.contact-info p {
+  color: #555;
+  font-size: 1rem;
+}
+
+.contact-info .info-item {
+  font-weight: 600;
+  color: #4e8f7b;
+}
+
+.contact-info a {
+  color: #4e8f7b;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form,
+  .contact-info {
+    padding: 35px;
+  }
+}
