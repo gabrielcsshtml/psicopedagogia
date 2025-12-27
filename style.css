@@ -29,14 +29,14 @@ body {
   width: 100%;
   background: rgba(255, 255, 255, 0.96);
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* centralizado */
   align-items: center;
   padding: 15px 40px;
   z-index: 100;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-/* LOGO */
+/* LOGO PEQUENA (caso use noutras páginas) */
 .logo {
   display: flex;
   align-items: center;
@@ -55,7 +55,7 @@ body {
 
 /* MENU */
 .menu a {
-  margin-left: 22px;
+  margin: 0 16px;
   text-decoration: none;
   font-weight: 600;
   color: #4e8f7b;
@@ -67,7 +67,7 @@ body {
 
 /* BOTÃO NO MENU */
 .menu .primary {
-  padding: 10px 20px;
+  padding: 10px 22px;
   border-radius: 30px;
   background: #4e8f7b;
   color: white;
@@ -91,19 +91,35 @@ body {
 }
 
 .shape-1 {
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   background: #ffd6a5;
-  top: -80px;
-  right: -80px;
+  top: -90px;
+  right: -90px;
 }
 
 .shape-2 {
-  width: 220px;
-  height: 220px;
+  width: 240px;
+  height: 240px;
   background: #c7ede6;
-  bottom: -60px;
-  left: -60px;
+  bottom: -70px;
+  left: -70px;
+}
+
+/* ===============================
+   LOGO CENTRAL GRANDE (DESTAQUE)
+================================ */
+.logo-center {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+
+.logo-center img {
+  width: 230px; /* LOGO GRANDE */
+  max-width: 90%;
+  height: auto;
+  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.08));
 }
 
 /* CONTEÚDO CENTRAL */
@@ -171,33 +187,6 @@ body {
   color: white;
 }
 
-/* ===============================
-   RESPONSIVO
-================================ */
-@media (max-width: 768px) {
-  .topo {
-    flex-direction: column;
-    gap: 10px;
-    padding: 15px 20px;
-  }
-
-  body {
-    padding-top: 120px;
-  }
-
-  .menu a {
-    margin-left: 0;
-    margin-right: 15px;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .logo img {
-    width: 55px;
-  }
-}
 /* ===============================
    ATENDIMENTO
 ================================ */
@@ -285,7 +274,6 @@ body {
   padding: 35px 25px;
   text-align: center;
   box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-  position: relative;
 }
 
 .step .number {
@@ -312,4 +300,26 @@ body {
   font-size: 1rem;
   color: #555;
   line-height: 1.5;
+}
+
+/* ===============================
+   RESPONSIVO
+================================ */
+@media (max-width: 768px) {
+  body {
+    padding-top: 120px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .logo-center img {
+    width: 160px;
+  }
+
+  .menu a {
+    font-size: 0.95rem;
+    margin: 0 10px;
+  }
 }
