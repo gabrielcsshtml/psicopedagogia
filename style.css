@@ -25,7 +25,7 @@ body {
 }
 
 /* ===============================
-   TOPO / MENU FIXO (CORRIGIDO)
+   TOPO / MENU FIXO (PADRÃO)
 ================================ */
 .topo {
   position: fixed;
@@ -38,6 +38,11 @@ body {
   padding: 12px 20px;
   z-index: 100;
   box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+/* GARANTE QUE LOGO GRANDE NUNCA APAREÇA NO MENU */
+.topo .logo-center {
+  display: none;
 }
 
 .menu {
@@ -67,7 +72,7 @@ body {
 }
 
 /* ===============================
-   HERO
+   HERO (APENAS INDEX)
 ================================ */
 .hero {
   background: linear-gradient(135deg, #fff1df, #eaf7f4);
@@ -100,7 +105,7 @@ body {
 }
 
 /* ===============================
-   LOGO CENTRAL (DESTAQUE)
+   LOGO GRANDE (SÓ NO HERO)
 ================================ */
 .logo-center {
   display: flex;
@@ -115,7 +120,7 @@ body {
   filter: drop-shadow(0 10px 25px rgba(0,0,0,0.08));
 }
 
-/* CONTEÚDO CENTRAL */
+/* CONTEÚDO HERO */
 .hero-content {
   display: flex;
   flex-direction: column;
@@ -125,7 +130,6 @@ body {
   z-index: 2;
 }
 
-/* TEXTO */
 .hero h1 {
   font-size: 2.6rem;
   color: #4e8f7b;
@@ -178,23 +182,30 @@ body {
 }
 
 /* ===============================
-   ATENDIMENTO
+   PÁGINAS INTERNAS
 ================================ */
-.atendimento h1 {
+.page {
+  padding-top: 40px;
+}
+
+.page h1 {
   text-align: center;
   color: #4e8f7b;
   font-size: 2.4rem;
   margin-bottom: 20px;
 }
 
-.atendimento .intro {
-  max-width: 700px;
+.page .intro {
+  max-width: 720px;
   margin: 0 auto 50px;
   text-align: center;
   font-size: 1.1rem;
   color: #555;
 }
 
+/* ===============================
+   CARDS (ATENDIMENTO)
+================================ */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -216,8 +227,8 @@ body {
 
 .card .icon {
   font-size: 2.5rem;
-  display: block;
   margin-bottom: 15px;
+  display: block;
 }
 
 .card h3 {
@@ -230,23 +241,8 @@ body {
 }
 
 /* ===============================
-   COMO FUNCIONA
+   PROCESSO
 ================================ */
-.processo h1 {
-  text-align: center;
-  color: #4e8f7b;
-  font-size: 2.4rem;
-  margin-bottom: 20px;
-}
-
-.processo .intro {
-  max-width: 720px;
-  margin: 0 auto 60px;
-  text-align: center;
-  font-size: 1.1rem;
-  color: #555;
-}
-
 .steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -275,7 +271,7 @@ body {
 }
 
 /* ===============================
-   RESPONSIVO (MOBILE)
+   RESPONSIVO
 ================================ */
 @media (max-width: 768px) {
 
@@ -306,22 +302,7 @@ body {
   .hero p {
     font-size: 1rem;
   }
-}
 
-/* ===============================
-   PÁGINAS INTERNAS (SEM HERO)
-================================ */
-.page {
-  padding-top: 40px;
-}
-
-/* remove sensação de menu gigante */
-.page h1:first-child {
-  margin-top: 0;
-}
-
-/* mobile */
-@media (max-width: 768px) {
   .page {
     padding-top: 20px;
   }
