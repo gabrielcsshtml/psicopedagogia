@@ -238,3 +238,49 @@ body {
     width: 160px;
   }
 }
+/* ===============================
+   CONTACTO – CORREÇÕES
+================================ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.contact-form textarea {
+  border-radius: var(--radius-md);
+  resize: vertical;
+}
+
+.contact-form button {
+  align-self: flex-start;
+  margin-top: var(--space-sm);
+}
+
+.contact-info .btn.secondary {
+  margin-top: var(--space-md);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
