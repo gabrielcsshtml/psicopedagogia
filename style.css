@@ -10,6 +10,11 @@
   --color-accent-1: #ffd6a5;
   --color-accent-2: #c7ede6;
 
+  /* TIPOGRAFIA */
+  --font-title: 2.6rem;
+  --font-subtitle: 1.5rem;
+  --font-body: 1rem;
+
   --radius-sm: 16px;
   --radius-md: 24px;
   --radius-lg: 32px;
@@ -47,6 +52,7 @@ body {
   color: var(--color-text);
   line-height: 1.6;
   padding-top: 80px;
+  font-size: var(--font-body);
 }
 
 .container {
@@ -143,7 +149,7 @@ body {
 }
 
 .hero h1 {
-  font-size: 2.6rem;
+  font-size: var(--font-title);
   color: var(--color-primary);
   margin-bottom: var(--space-sm);
   letter-spacing: -0.02em;
@@ -171,7 +177,9 @@ body {
   border-radius: 999px;
   font-weight: 600;
   text-decoration: none;
-  transition: all var(--transition-base);
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base),
+              background var(--transition-base);
 }
 
 .btn.primary {
@@ -182,6 +190,8 @@ body {
 
 .btn.primary:hover {
   background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .btn.secondary {
@@ -193,6 +203,7 @@ body {
 .btn.secondary:hover {
   background: var(--color-primary);
   color: white;
+  transform: translateY(-2px);
 }
 
 /* ===============================
@@ -229,6 +240,16 @@ body {
 }
 
 /* ===============================
+   ACESSIBILIDADE (PROFISSIONAL)
+================================ */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-accent-2);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* ===============================
    ANIMAÇÕES
 ================================ */
 [data-animate] {
@@ -262,5 +283,9 @@ body {
 
   .logo-center img {
     width: 160px;
+  }
+
+  .btn {
+    padding: 14px 26px;
   }
 }
