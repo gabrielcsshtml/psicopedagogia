@@ -253,3 +253,63 @@ body {
   color: #555;
   line-height: 1.5;
 }
+
+/* ===============================
+   COMO FUNCIONA
+================================ */
+.processo h1 {
+  text-align: center;
+  color: #4e8f7b;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+}
+
+.processo .intro {
+  max-width: 720px;
+  margin: 0 auto 60px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* ETAPAS */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 35px;
+}
+
+.step {
+  background: white;
+  border-radius: 30px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+.step .number {
+  width: 50px;
+  height: 50px;
+  background: #c7ede6;
+  color: #4e8f7b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0 auto 15px;
+}
+
+.step h3 {
+  color: #4e8f7b;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+}
+
+.step p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
