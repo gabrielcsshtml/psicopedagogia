@@ -1,4 +1,35 @@
 /* ===============================
+   DESIGN SYSTEM
+================================ */
+:root {
+  --color-primary: #4e8f7b;
+  --color-primary-dark: #3f7766;
+  --color-bg: #f7fbf9;
+  --color-text: #333;
+  --color-muted: #555;
+  --color-accent-1: #ffd6a5;
+  --color-accent-2: #c7ede6;
+
+  --radius-sm: 16px;
+  --radius-md: 24px;
+  --radius-lg: 32px;
+  --radius-xl: 45px;
+
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 48px;
+  --space-xl: 80px;
+
+  --shadow-sm: 0 6px 18px rgba(0,0,0,0.06);
+  --shadow-md: 0 12px 30px rgba(0,0,0,0.08);
+  --shadow-lg: 0 22px 55px rgba(0,0,0,0.1);
+
+  --transition-fast: 0.25s ease;
+  --transition-base: 0.35s ease;
+}
+
+/* ===============================
    RESET
 ================================ */
 * {
@@ -12,20 +43,20 @@
 ================================ */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f7fbf9;
-  color: #333;
+  background: var(--color-bg);
+  color: var(--color-text);
   line-height: 1.6;
-  padding-top: 80px; /* altura real do menu fixo */
+  padding-top: 80px;
 }
 
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 20px;
+  padding: var(--space-md);
 }
 
 /* ===============================
-   TOPO / MENU FIXO (PADRÃO)
+   TOPO / MENU FIXO
 ================================ */
 .topo {
   position: fixed;
@@ -34,21 +65,14 @@ body {
   background: rgba(255, 255, 255, 0.97);
   display: flex;
   justify-content: center;
-  align-items: center;
   padding: 12px 20px;
   z-index: 100;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-}
-
-/* GARANTE QUE LOGO GRANDE NÃO APAREÇA NO MENU */
-.topo .logo-center {
-  display: none;
+  box-shadow: var(--shadow-sm);
 }
 
 .menu {
   display: flex;
-  align-items: center;
-  gap: 16px;
+  gap: var(--space-sm);
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -56,8 +80,9 @@ body {
 .menu a {
   text-decoration: none;
   font-weight: 600;
-  color: #4e8f7b;
+  color: var(--color-primary);
   font-size: 0.95rem;
+  transition: color var(--transition-fast);
 }
 
 .menu a:hover {
@@ -66,35 +91,34 @@ body {
 
 .menu a.primary {
   padding: 8px 18px;
-  border-radius: 25px;
-  background: #4e8f7b;
+  border-radius: 999px;
+  background: var(--color-primary);
   color: white;
 }
 
 /* ===============================
-   HERO (SÓ NO INDEX)
+   HERO
 ================================ */
 .hero {
   background: linear-gradient(135deg, #fff1df, #eaf7f4);
-  position: relative;
-  overflow: hidden;
-
-  min-height: calc(100vh - 80px); /* 🔥 COBRE A TELA */
+  min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
-/* FORMAS DECORATIVAS */
 .shape {
   position: absolute;
   border-radius: 50%;
   opacity: 0.25;
+  animation: floatSlow 14s ease-in-out infinite;
 }
 
 .shape-1 {
   width: 320px;
   height: 320px;
-  background: #ffd6a5;
+  background: var(--color-accent-1);
   top: -90px;
   right: -90px;
 }
@@ -102,502 +126,141 @@ body {
 .shape-2 {
   width: 240px;
   height: 240px;
-  background: #c7ede6;
+  background: var(--color-accent-2);
   bottom: -70px;
   left: -70px;
 }
 
-/* ===============================
-   LOGO GRANDE (SÓ HERO)
-================================ */
-.logo-center {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 35px;
+.hero-content {
+  text-align: center;
+  padding: var(--space-xl) 0;
 }
 
 .logo-center img {
   width: 240px;
-  max-width: 90%;
-  height: auto;
   filter: drop-shadow(0 10px 25px rgba(0,0,0,0.08));
-}
-
-/* CONTEÚDO HERO */
-.hero-content {
-  width: 100%;
-  padding: 40px 0 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  z-index: 2;
+  margin-bottom: var(--space-lg);
 }
 
 .hero h1 {
   font-size: 2.6rem;
-  color: #4e8f7b;
-  margin-bottom: 20px;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.02em;
 }
 
 .hero p {
-  max-width: 650px;
-  margin: 0 auto 35px;
+  max-width: 65ch;
+  margin: 0 auto var(--space-md);
+  color: var(--color-muted);
   font-size: 1.15rem;
-  color: #555;
 }
 
-/* BOTÕES */
+/* ===============================
+   BOTÕES
+================================ */
 .actions {
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: var(--space-sm);
   flex-wrap: wrap;
 }
 
 .btn {
   padding: 14px 30px;
-  border-radius: 40px;
-  text-decoration: none;
+  border-radius: 999px;
   font-weight: 600;
-  transition: 0.3s ease;
-  font-size: 1rem;
+  text-decoration: none;
+  transition: all var(--transition-base);
 }
 
-.primary {
-  background: #4e8f7b;
-  color: #fff;
-  box-shadow: 0 6px 18px rgba(78, 143, 123, 0.25);
+.btn.primary {
+  background: var(--color-primary);
+  color: white;
+  box-shadow: 0 6px 18px rgba(78,143,123,0.25);
 }
 
-.primary:hover {
-  background: #3f7766;
+.btn.primary:hover {
+  background: var(--color-primary-dark);
 }
 
-.secondary {
-  border: 2px solid #4e8f7b;
-  color: #4e8f7b;
-  background: #ffffffaa;
+.btn.secondary {
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  background: rgba(255,255,255,0.7);
 }
 
-.secondary:hover {
-  background: #4e8f7b;
+.btn.secondary:hover {
+  background: var(--color-primary);
   color: white;
 }
 
 /* ===============================
-   PÁGINAS INTERNAS
+   ATENDIMENTO
 ================================ */
-.page {
-  padding-top: 40px;
-}
-
-.page h1 {
-  text-align: center;
-  color: #4e8f7b;
-  font-size: 2.4rem;
-  margin-bottom: 20px;
-}
-
-.page .intro {
-  max-width: 720px;
-  margin: 0 auto 50px;
-  text-align: center;
-  font-size: 1.1rem;
-  color: #555;
-}
-
-/* ===============================
-   CARDS (ATENDIMENTO)
-================================ */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-}
-
-.card {
+.att-card {
   background: white;
-  border-radius: 25px;
-  padding: 30px 25px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-.card:hover {
+.att-card:hover {
   transform: translateY(-8px);
-}
-
-.card .icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  display: block;
-}
-
-.card h3 {
-  color: #4e8f7b;
-  margin-bottom: 12px;
-}
-
-.card p {
-  color: #555;
+  box-shadow: var(--shadow-lg);
 }
 
 /* ===============================
-   PROCESSO
+   CONTACTO
 ================================ */
-.steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 35px;
-}
-
-.step {
+.contact-form,
+.contact-info {
   background: white;
-  border-radius: 30px;
-  padding: 35px 25px;
-  text-align: center;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base);
 }
 
-.step .number {
-  width: 50px;
-  height: 50px;
-  background: #c7ede6;
-  color: #4e8f7b;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  margin: 0 auto 15px;
+.contact-form:hover,
+.contact-info:hover {
+  transform: translateY(-6px);
 }
 
 /* ===============================
-   RESPONSIVO (MOBILE)
+   ANIMAÇÕES
+================================ */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-animate].show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes floatSlow {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(18px); }
+  100% { transform: translateY(0); }
+}
+
+/* ===============================
+   RESPONSIVO
 ================================ */
 @media (max-width: 768px) {
-
   body {
     padding-top: 110px;
   }
 
-  .hero {
-    min-height: calc(100vh - 110px);
-  }
-
-  .menu {
-    gap: 12px;
-  }
-
-  .menu a {
-    font-size: 0.9rem;
-  }
-
-  .menu a.primary {
-    padding: 8px 16px;
+  .hero h1 {
+    font-size: 2rem;
   }
 
   .logo-center img {
     width: 160px;
-  }
-
-  .hero h1 {
-    font-size: 1.9rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .page {
-    padding-top: 20px;
-  }
-}
-/* ===============================
-   CONTACTO – CLÍNICA PREMIUM
-================================ */
-
-.contact-hero {
-  background: linear-gradient(135deg, #eaf7f4, #fff1df);
-  padding: 80px 0 60px;
-  position: relative;
-  overflow: hidden;
-}
-
-.contact-hero::before {
-  content: "";
-  position: absolute;
-  width: 380px;
-  height: 380px;
-  background: #c7ede6;
-  border-radius: 50%;
-  top: -120px;
-  left: -120px;
-  opacity: 0.35;
-}
-
-.contact-hero::after {
-  content: "";
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  background: #ffd6a5;
-  border-radius: 50%;
-  bottom: -100px;
-  right: -100px;
-  opacity: 0.35;
-}
-
-.contact-hero h1 {
-  text-align: center;
-  color: #4e8f7b;
-  font-size: 2.6rem;
-  margin-bottom: 15px;
-}
-
-.contact-hero p {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 1.15rem;
-  color: #555;
-}
-
-/* BLOCO PRINCIPAL */
-.contact-section {
-  background: #f7fbf9;
-  padding: 70px 0 90px;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 45px;
-  align-items: stretch;
-}
-
-/* FORMULÁRIO */
-.contact-form {
-  background: white;
-  padding: 45px;
-  border-radius: 35px;
-  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
-}
-
-.contact-form h2 {
-  color: #4e8f7b;
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-.contact-form p {
-  color: #666;
-  margin-bottom: 25px;
-}
-
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 15px 20px;
-  border-radius: 20px;
-  border: 1px solid #ddd;
-  font-size: 0.95rem;
-  font-family: inherit;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #4e8f7b;
-}
-
-.contact-form button {
-  align-self: flex-start;
-}
-
-/* BLOCO INSTITUCIONAL */
-.contact-info {
-  background: linear-gradient(135deg, #ffffff, #eaf7f4);
-  padding: 45px;
-  border-radius: 35px;
-  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 22px;
-}
-
-.contact-info h3 {
-  color: #4e8f7b;
-  font-size: 1.6rem;
-}
-
-.contact-info p {
-  color: #555;
-  font-size: 1rem;
-}
-
-.contact-info .info-item {
-  font-weight: 600;
-  color: #4e8f7b;
-}
-
-.contact-info a {
-  color: #4e8f7b;
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-/* RESPONSIVO */
-@media (max-width: 900px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-form,
-  .contact-info {
-    padding: 35px;
-  }
-}
-/* ===============================
-   ATENDIMENTO – CLÍNICA PREMIUM
-================================ */
-
-.att-hero {
-  background: linear-gradient(135deg, #eaf7f4, #fff1df);
-  padding: 90px 0 70px;
-  position: relative;
-  overflow: hidden;
-}
-
-.att-hero::before {
-  content: "";
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  background: #c7ede6;
-  border-radius: 50%;
-  top: -150px;
-  right: -150px;
-  opacity: 0.35;
-}
-
-.att-hero::after {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: #ffd6a5;
-  border-radius: 50%;
-  bottom: -120px;
-  left: -120px;
-  opacity: 0.35;
-}
-
-.att-hero h1 {
-  text-align: center;
-  color: #4e8f7b;
-  font-size: 2.6rem;
-  margin-bottom: 15px;
-}
-
-.att-hero p {
-  max-width: 750px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 1.15rem;
-  color: #555;
-}
-
-/* SEÇÃO PRINCIPAL */
-.att-section {
-  background: #f7fbf9;
-  padding: 80px 0 100px;
-}
-
-/* CARDS PREMIUM */
-.att-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 35px;
-}
-
-.att-card {
-  background: white;
-  border-radius: 35px;
-  padding: 40px 30px;
-  text-align: center;
-  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-.att-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 55px rgba(0,0,0,0.12);
-}
-
-.att-card .icon {
-  font-size: 2.8rem;
-  margin-bottom: 18px;
-  display: block;
-}
-
-.att-card h3 {
-  color: #4e8f7b;
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-}
-
-.att-card p {
-  color: #555;
-  font-size: 0.98rem;
-}
-
-/* BLOCO DIFERENCIAL */
-.att-differential {
-  margin-top: 90px;
-  background: linear-gradient(135deg, #ffffff, #eaf7f4);
-  border-radius: 45px;
-  padding: 60px;
-  box-shadow: 0 22px 55px rgba(0,0,0,0.08);
-  text-align: center;
-}
-
-.att-differential h2 {
-  color: #4e8f7b;
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.att-differential p {
-  max-width: 750px;
-  margin: 0 auto 35px;
-  color: #555;
-  font-size: 1.05rem;
-}
-
-.att-differential .btn {
-  margin-top: 10px;
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .att-hero h1 {
-    font-size: 2rem;
-  }
-
-  .att-differential {
-    padding: 40px 30px;
   }
 }
