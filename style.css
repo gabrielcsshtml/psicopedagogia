@@ -239,42 +239,73 @@ body {
   }
 }
 /* ===============================
-   CONTACTO – CORREÇÕES
+   CONTACTO – FIX DEFINITIVO
 ================================ */
+
+.contact-section {
+  margin-top: var(--space-xl);
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
+  gap: var(--space-xl);
   align-items: start;
 }
 
+/* FORM */
 .contact-form form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: var(--space-sm);
 }
 
+/* FORÇA os inputs a respeitarem layout */
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
+  display: block !important;
+  width: 100% !important;
   padding: 14px 18px;
   border-radius: 999px;
   border: 1px solid #ccc;
   font-family: inherit;
   font-size: 0.95rem;
+  background: white;
 }
 
+/* Textarea ajustada */
 .contact-form textarea {
   border-radius: var(--radius-md);
   resize: vertical;
+  min-height: 120px;
 }
 
+/* Botão */
 .contact-form button {
-  align-self: flex-start;
+  width: fit-content;
   margin-top: var(--space-sm);
 }
 
+/* INFO */
+.contact-info {
+  background: white;
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-info .info-item {
+  margin-top: var(--space-xs);
+}
+
+.contact-info a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
 .contact-info .btn.secondary {
+  display: inline-block;
   margin-top: var(--space-md);
 }
 
