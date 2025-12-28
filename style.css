@@ -95,8 +95,6 @@ body {
   background: linear-gradient(135deg, #fff1df, #eaf7f4);
   display: flex;
   align-items: center;
-  position: relative;
-  overflow: hidden;
 }
 
 .hero-content {
@@ -227,19 +225,7 @@ body {
 }
 
 /* ===============================
-   RESPONSIVO
-================================ */
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .logo-center img {
-    width: 160px;
-  }
-}
-/* ===============================
-   CONTACTO – FIX DEFINITIVO
+   CONTACTO – ESTILO PREMIUM
 ================================ */
 
 .contact-section {
@@ -250,68 +236,98 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-xl);
-  align-items: start;
 }
 
-/* FORM */
+/* FORMULÁRIO */
+.contact-form {
+  background: white;
+  padding: 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
 .contact-form form {
   display: grid;
-  grid-template-columns: 1fr;
   gap: var(--space-sm);
 }
 
-/* FORÇA os inputs a respeitarem layout */
 .contact-form input,
 .contact-form textarea {
-  display: block !important;
-  width: 100% !important;
-  padding: 14px 18px;
-  border-radius: 999px;
-  border: 1px solid #ccc;
+  width: 100%;
+  padding: 16px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #d7e0dd;
   font-family: inherit;
   font-size: 0.95rem;
   background: white;
+  transition: all var(--transition-fast);
 }
 
-/* Textarea ajustada */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(78,143,123,0.15);
+}
+
 .contact-form textarea {
-  border-radius: var(--radius-md);
+  min-height: 130px;
   resize: vertical;
-  min-height: 120px;
-}
-
-/* Botão */
-.contact-form button {
-  width: fit-content;
-  margin-top: var(--space-sm);
+  border-radius: var(--radius-md);
 }
 
 /* INFO */
 .contact-info {
-  background: white;
-  padding: var(--space-lg);
+  background: linear-gradient(180deg, #ffffff, #f4faf8);
+  padding: 40px;
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 
-.contact-info .info-item {
-  margin-top: var(--space-xs);
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0;
+  color: #3e5c54;
 }
 
-.contact-info a {
-  color: var(--color-primary);
-  text-decoration: none;
-  font-weight: 600;
-}
-
+/* BOTÃO WHATSAPP */
 .contact-info .btn.secondary {
   display: inline-block;
   margin-top: var(--space-md);
+  padding: 14px 26px;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  box-shadow: 0 6px 18px rgba(78,143,123,0.25);
+  transition: all var(--transition-base);
 }
 
-/* RESPONSIVO */
+.contact-info .btn.secondary:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   RESPONSIVO
+================================ */
 @media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .logo-center img {
+    width: 160px;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .contact-form,
+  .contact-info {
+    padding: 28px;
   }
 }
