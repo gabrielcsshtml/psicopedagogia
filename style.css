@@ -128,7 +128,7 @@ body {
 }
 
 /* ===============================
-   BOTÕES
+   BOTÕES (NORMALIZADOS)
 ================================ */
 .actions {
   display: flex;
@@ -137,12 +137,19 @@ body {
   flex-wrap: wrap;
 }
 
-.btn {
+.btn,
+a.btn,
+button {
   padding: 14px 34px;
   border-radius: 999px;
   font-weight: 600;
   text-decoration: none;
   transition: all var(--transition-fast);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--space-sm);
 }
 
 .btn.primary {
@@ -277,6 +284,25 @@ body {
 }
 
 /* ===============================
+   CTA / SEÇÕES DE TEXTO
+================================ */
+section {
+  position: relative;
+  overflow: visible;
+  padding-bottom: var(--space-lg);
+}
+
+section h2,
+section h3 {
+  margin-bottom: var(--space-sm);
+}
+
+section p {
+  margin-bottom: var(--space-sm);
+  clear: both;
+}
+
+/* ===============================
    ANIMAÇÕES
 ================================ */
 [data-animate] {
@@ -291,7 +317,7 @@ body {
 }
 
 /* ===============================
-   RESPONSIVO
+   RESPONSIVO (CORRIGIDO)
 ================================ */
 @media (max-width: 768px) {
 
@@ -329,32 +355,13 @@ body {
   .contact-info p {
     justify-content: center;
   }
-}
-/* ===============================
-   CORREÇÃO BOTÃO AGENDAR
-================================ */
 
-.btn,
-button,
-a.btn {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1.5rem;
-}
+  /* AJUSTE DEFINITIVO DO CTA NO MOBILE */
+  section {
+    padding-bottom: var(--space-xl);
+  }
 
-/* Garante que seções empilhem corretamente */
-section,
-.container,
-.contact-section {
-  position: relative;
-  overflow: visible;
-}
-
-/* Evita sobreposição em textos longos */
-section p,
-section h2,
-section h3 {
-  clear: both;
+  .btn.primary {
+    margin-top: var(--space-md);
+  }
 }
