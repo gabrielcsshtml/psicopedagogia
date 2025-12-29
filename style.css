@@ -1,34 +1,34 @@
 /* ===============================
-   DESIGN SYSTEM
+   DESIGN SYSTEM (PREMIUM)
 ================================ */
 :root {
   --color-primary: #4e8f7b;
   --color-primary-dark: #3f7766;
-  --color-bg: #f7fbf9;
-  --color-text: #2f3e3b;
-  --color-muted: #556b66;
+  --color-bg: #f6fbf9;
+  --color-text: #243531;
+  --color-muted: #5f7771;
 
-  --radius-sm: 12px;
-  --radius-md: 20px;
-  --radius-lg: 28px;
-  --radius-xl: 42px;
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-xl: 40px;
 
-  --space-xs: 8px;
-  --space-sm: 16px;
-  --space-md: 24px;
-  --space-lg: 40px;
-  --space-xl: 72px;
+  --space-xs: 6px;
+  --space-sm: 14px;
+  --space-md: 26px;
+  --space-lg: 46px;
+  --space-xl: 80px;
 
-  --shadow-sm: 0 6px 18px rgba(0,0,0,0.06);
-  --shadow-md: 0 16px 36px rgba(0,0,0,0.08);
-  --shadow-lg: 0 30px 70px rgba(0,0,0,0.12);
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.05);
+  --shadow-md: 0 18px 45px rgba(0,0,0,0.08);
+  --shadow-lg: 0 35px 80px rgba(0,0,0,0.12);
 
   --transition-fast: 0.2s ease;
-  --transition-base: 0.35s ease;
+  --transition-base: 0.4s cubic-bezier(.22,.61,.36,1);
 }
 
 /* ===============================
-   RESET & BASE
+   RESET
 ================================ */
 * {
   margin: 0;
@@ -39,66 +39,69 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: var(--color-bg);
+  font-family: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  background: linear-gradient(180deg, #f9fdfb, var(--color-bg));
   color: var(--color-text);
-  line-height: 1.7;
-  padding-top: 90px;
+  line-height: 1.75;
+  padding-top: 96px;
 }
 
 /* ===============================
    CONTAINER
 ================================ */
 .container {
-  max-width: 1100px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: var(--space-md);
 }
 
 /* ===============================
-   MENU
+   HEADER / MENU
 ================================ */
 .topo {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255,255,255,0.97);
-  backdrop-filter: blur(6px);
-  box-shadow: var(--shadow-sm);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-soft);
   z-index: 100;
 }
 
 .menu {
   display: flex;
   justify-content: center;
-  gap: var(--space-sm);
-  padding: 14px;
+  gap: 12px;
+  padding: 16px;
 }
 
 .menu a {
   font-weight: 600;
+  font-size: 0.95rem;
   color: var(--color-primary);
   text-decoration: none;
-  padding: 8px 18px;
+  padding: 9px 20px;
   border-radius: 999px;
-  transition: background var(--transition-fast);
+  transition: all var(--transition-fast);
 }
 
 .menu a:hover {
-  background: rgba(78,143,123,0.12);
+  background: rgba(78,143,123,0.14);
 }
 
 .menu a.primary {
   background: var(--color-primary);
   color: #fff;
+  box-shadow: 0 6px 20px rgba(78,143,123,0.35);
 }
 
 /* ===============================
-   HERO
+   HERO (IMPACTO PREMIUM)
 ================================ */
 .hero {
-  min-height: calc(100vh - 90px);
-  background: linear-gradient(135deg, #fff1df, #eaf7f4);
+  min-height: calc(100vh - 96px);
+  background:
+    radial-gradient(circle at top, #ffffff, #eaf7f4);
   display: flex;
   align-items: center;
 }
@@ -109,26 +112,27 @@ body {
 }
 
 .logo-center img {
-  width: 220px;
+  width: 230px;
   margin-bottom: var(--space-lg);
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.08));
 }
 
 .hero h1 {
-  font-size: 2.6rem;
+  font-size: clamp(2.2rem, 4vw, 2.9rem);
   color: var(--color-primary);
   max-width: 22ch;
   margin: 0 auto var(--space-sm);
 }
 
 .hero p {
-  max-width: 62ch;
+  max-width: 64ch;
   margin: 0 auto var(--space-md);
   color: var(--color-muted);
   font-size: 1.1rem;
 }
 
 /* ===============================
-   BOTÕES (NORMALIZADOS)
+   BOTÕES
 ================================ */
 .actions {
   display: flex;
@@ -140,27 +144,28 @@ body {
 .btn,
 a.btn,
 button {
-  padding: 14px 34px;
+  padding: 15px 36px;
   border-radius: 999px;
   font-weight: 600;
   text-decoration: none;
   transition: all var(--transition-fast);
-  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: var(--space-sm);
 }
 
 .btn.primary {
-  background: var(--color-primary);
-  color: white;
-  box-shadow: 0 8px 22px rgba(78,143,123,0.3);
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(78,143,123,0.35);
 }
 
 .btn.primary:hover {
-  background: var(--color-primary-dark);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .btn.secondary {
@@ -174,7 +179,7 @@ button {
 }
 
 /* ===============================
-   ATENDIMENTO
+   ATENDIMENTO (CARDS PREMIUM)
 ================================ */
 .att-cards {
   display: grid;
@@ -184,15 +189,37 @@ button {
 }
 
 .att-card {
-  background: white;
+  background: linear-gradient(180deg, #ffffff, #f9fdfb);
   border-radius: var(--radius-lg);
-  padding: var(--space-md);
+  padding: 34px;
   box-shadow: var(--shadow-md);
-  transition: transform var(--transition-base);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.att-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg,
+    rgba(78,143,123,0.15),
+    transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
 }
 
 .att-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
+}
+
+.att-card:hover::after {
+  opacity: 1;
+}
+
+.att-card .icon {
+  font-size: 1.9rem;
+  margin-bottom: 10px;
 }
 
 /* ===============================
@@ -206,18 +233,22 @@ button {
 
 .process-step {
   display: grid;
-  grid-template-columns: 42px 1fr;
+  grid-template-columns: 46px 1fr;
   gap: var(--space-sm);
   background: white;
-  padding: var(--space-md);
+  padding: 30px;
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-soft);
 }
 
 .process-step span {
-  width: 42px;
-  height: 42px;
-  background: var(--color-primary);
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
   color: white;
   border-radius: 50%;
   display: flex;
@@ -227,7 +258,7 @@ button {
 }
 
 /* ===============================
-   CONTACTO
+   CONTATO
 ================================ */
 .contact-section {
   margin-top: var(--space-xl);
@@ -237,13 +268,12 @@ button {
   display: grid;
   grid-template-columns: 1fr 420px;
   gap: var(--space-xl);
-  align-items: start;
 }
 
 .contact-form,
 .contact-info {
-  background: white;
-  padding: 36px;
+  background: linear-gradient(180deg, #ffffff, #f8fcfb);
+  padding: 38px;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
 }
@@ -257,7 +287,7 @@ button {
 .contact-form textarea {
   padding: 16px 18px;
   border-radius: var(--radius-sm);
-  border: 1px solid #d7e0dd;
+  border: 1px solid #d9e4e0;
   font-family: inherit;
 }
 
@@ -265,41 +295,32 @@ button {
 .contact-form textarea:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 4px rgba(78,143,123,0.18);
+  box-shadow: 0 0 0 4px rgba(78,143,123,0.2);
 }
 
 .contact-info p {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin: 14px 0;
+  margin: 16px 0;
   font-size: 0.95rem;
   color: var(--color-muted);
 }
 
-.contact-info .btn {
-  margin-top: 16px;
-  padding: 12px 22px;
-  font-size: 0.95rem;
-}
-
 /* ===============================
-   CTA / SEÇÕES DE TEXTO
+   CTA FINAL
 ================================ */
-section {
-  position: relative;
-  overflow: visible;
-  padding-bottom: var(--space-lg);
-}
-
-section h2,
-section h3 {
-  margin-bottom: var(--space-sm);
-}
-
-section p {
-  margin-bottom: var(--space-sm);
-  clear: both;
+.att-differential {
+  margin-top: var(--space-xl);
+  padding: 48px;
+  background: linear-gradient(
+    135deg,
+    rgba(78,143,123,0.12),
+    rgba(255,255,255,0.9)
+  );
+  border-radius: var(--radius-xl);
+  text-align: center;
+  box-shadow: var(--shadow-soft);
 }
 
 /* ===============================
@@ -307,8 +328,8 @@ section p {
 ================================ */
 [data-animate] {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(26px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 [data-animate].active {
@@ -317,21 +338,15 @@ section p {
 }
 
 /* ===============================
-   RESPONSIVO (CORRIGIDO)
+   RESPONSIVO
 ================================ */
 @media (max-width: 768px) {
 
-  body { padding-top: 110px; }
+  body { padding-top: 118px; }
 
   .menu {
     flex-wrap: wrap;
-    justify-content: center;
     gap: 10px;
-  }
-
-  .menu a {
-    padding: 8px 14px;
-    font-size: 0.9rem;
   }
 
   .hero h1 {
@@ -339,7 +354,7 @@ section p {
   }
 
   .logo-center img {
-    width: 160px;
+    width: 165px;
   }
 
   .contact-grid {
@@ -348,20 +363,11 @@ section p {
 
   .contact-form,
   .contact-info {
-    padding: 28px;
     text-align: center;
+    padding: 30px;
   }
 
   .contact-info p {
     justify-content: center;
-  }
-
-  /* AJUSTE DEFINITIVO DO CTA NO MOBILE */
-  section {
-    padding-bottom: var(--space-xl);
-  }
-
-  .btn.primary {
-    margin-top: var(--space-md);
   }
 }
