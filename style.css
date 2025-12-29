@@ -330,3 +330,31 @@ body {
     justify-content: center;
   }
 }
+/* ===============================
+   CORREÇÃO BOTÃO AGENDAR
+================================ */
+
+.btn,
+button,
+a.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* Garante que seções empilhem corretamente */
+section,
+.container,
+.contact-section {
+  position: relative;
+  overflow: visible;
+}
+
+/* Evita sobreposição em textos longos */
+section p,
+section h2,
+section h3 {
+  clear: both;
+}
