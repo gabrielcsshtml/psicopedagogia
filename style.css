@@ -441,41 +441,44 @@ section + section {
 }
 
 /* ===============================
-   FIX – SEÇÃO DE CONTATO (ISOLAMENTO)
-   Não altera outras páginas
+   FIX – FORMULÁRIO DE CONTATO
+   alinhamento profissional
 ================================ */
 
-.contact-section {
-  position: relative;
-  z-index: 2;
-  padding: var(--space-xl) 0;
+.contact-form form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
 }
 
-/* cria um fundo próprio e contido */
-.contact-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(247,251,249,0.8),
-    rgba(247,251,249,1)
-  );
-  z-index: -1;
+/* inputs e textarea */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #cfded9;
+  font-family: inherit;
+  font-size: 0.95rem;
 }
 
-/* garante alinhamento e peso visual */
-.contact-grid {
-  align-items: stretch;
+/* textarea ocupa linha inteira */
+.contact-form textarea {
+  grid-column: 1 / -1;
+  resize: vertical;
+  min-height: 120px;
 }
 
-/* reforço visual dos cards */
-.contact-form,
-.contact-info {
-  box-shadow: var(--shadow-lg);
+/* botão centralizado e com respiro */
+.contact-form button {
+  grid-column: 1 / -1;
+  margin-top: var(--space-sm);
+  justify-self: flex-start;
 }
 
-/* remove sensação de "flutuar errado" */
-section.contact-section {
-  margin-top: var(--space-xl);
+/* mobile */
+@media (max-width: 600px) {
+  .contact-form form {
+    grid-template-columns: 1fr;
+  }
 }
