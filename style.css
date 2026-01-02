@@ -94,9 +94,18 @@ body {
 }
 
 /* ===============================
-   FUNDOS PREMIUM
+   PROTEÇÃO DO HERO (CRÍTICO)
 ================================ */
-section:not(.hero) {
+.hero {
+  position: relative;
+  background: inherit;
+  z-index: 2;
+}
+
+/* ===============================
+   FUNDOS PREMIUM (SOMENTE CONTEÚDO)
+================================ */
+main section {
   background: linear-gradient(
     180deg,
     rgba(247,251,249,0.6),
@@ -104,7 +113,7 @@ section:not(.hero) {
   );
 }
 
-section + section {
+main section + section {
   margin-top: var(--space-xl);
 }
 
@@ -122,7 +131,7 @@ section + section {
   box-shadow: var(--shadow-md);
 }
 
-/* linha editorial lateral */
+/* linha editorial */
 .about-intro::before,
 .about-method::before,
 .about-focus::before,
@@ -161,7 +170,7 @@ section + section {
   margin-bottom: var(--space-sm);
 }
 
-/* frase de impacto */
+/* destaque */
 .about-highlight {
   font-size: 1.15rem;
   font-weight: 600;
