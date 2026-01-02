@@ -356,3 +356,86 @@ section + section {
     aspect-ratio: 3 / 4;
   }
 }
+
+/* ===============================
+   SOBRE MIM — LAYOUT PREMIUM (ADD-ON)
+   ⚠️ NÃO sobrescreve estilos existentes
+================================ */
+
+.about-intro,
+.about-method,
+.about-focus,
+.about-schools {
+  background: rgba(255,255,255,0.92);
+  border-radius: var(--radius-xl);
+  padding: clamp(36px, 5vw, 72px);
+  box-shadow: var(--shadow-md);
+  margin-top: var(--space-xl);
+  position: relative;
+}
+
+/* detalhe editorial lateral (não interfere no layout atual) */
+.about-intro::before,
+.about-method::before,
+.about-focus::before,
+.about-schools::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 32px;
+  bottom: 32px;
+  width: 5px;
+  border-radius: 6px;
+  background: linear-gradient(
+    180deg,
+    var(--color-primary),
+    transparent
+  );
+}
+
+/* títulos */
+.about-intro h1,
+.about-method h2,
+.about-focus h2,
+.about-schools h2 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+  max-width: 24ch;
+}
+
+/* textos */
+.about-intro p,
+.about-method p,
+.about-focus p,
+.about-schools p {
+  max-width: 68ch;
+  color: var(--color-muted);
+  margin-bottom: var(--space-sm);
+}
+
+/* frase de impacto opcional */
+.about-highlight {
+  margin-top: var(--space-md);
+  padding-left: var(--space-md);
+  border-left: 4px solid var(--color-primary);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* ajuste mobile suave */
+@media (max-width: 768px) {
+  .about-intro,
+  .about-method,
+  .about-focus,
+  .about-schools {
+    padding: 36px 26px;
+  }
+
+  .about-intro::before,
+  .about-method::before,
+  .about-focus::before,
+  .about-schools::before {
+    top: 24px;
+    bottom: 24px;
+  }
+}
