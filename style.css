@@ -724,3 +724,19 @@ section + section {
     padding: 4rem 3.5rem;
   }
 }
+
+/* ===============================
+   HERO – AUMENTAR IMAGEM INICIAL
+   (ADD-ON seguro, não altera CSS existente)
+================================ */
+
+.logo-center img {
+  width: 300px; /* ajuste aqui se quiser maior */
+}
+
+/* ajuste responsivo */
+@media (max-width: 768px) {
+  .logo-center img {
+    width: 220px;
+  }
+}
