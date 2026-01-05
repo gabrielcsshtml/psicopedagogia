@@ -740,3 +740,29 @@ section + section {
     width: 220px;
   }
 }
+/* =================================================
+   FIX – HERO / LOGO
+   remove espaçamento excessivo sem alterar CSS existente
+================================================= */
+
+.hero {
+  min-height: auto !important;
+  align-items: flex-start;
+}
+
+.hero-content {
+  padding-top: 48px !important;
+  padding-bottom: 56px !important;
+}
+
+.logo-center img {
+  margin-bottom: 24px !important;
+}
+
+/* ajuste mobile */
+@media (max-width: 768px) {
+  .hero-content {
+    padding-top: 36px !important;
+    padding-bottom: 48px !important;
+  }
+}
