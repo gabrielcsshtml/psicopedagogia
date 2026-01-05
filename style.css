@@ -774,3 +774,16 @@ section + section {
     padding-bottom: 28px;
   }
 }
+/* =========================================
+   FIX – ESPAÇO SOB O MENU FIXO
+========================================= */
+
+body {
+  padding-top: 64px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 88px;
+  }
+}
