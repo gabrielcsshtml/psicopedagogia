@@ -604,7 +604,6 @@ section + section {
     grid-template-columns: 1fr;
   }
 }
-
 /* ===============================
    COMO FUNCIONA – ESTILO SOFISTICADO
 ================================ */
@@ -724,7 +723,6 @@ section + section {
     padding: 4rem 3.5rem;
   }
 }
-
 /* ===============================
    HERO – AUMENTAR IMAGEM INICIAL
    (ADD-ON seguro, não altera CSS existente)
@@ -741,31 +739,38 @@ section + section {
   }
 }
 /* =================================================
-   HERO – ESPAÇAMENTO DEFINITIVO (FINAL)
+   HERO – AJUSTE VISUAL DEFINITIVO
+   corrige sensação de espaço estranho
 ================================================= */
 
 .hero {
-  min-height: auto;
-  align-items: flex-start;
+  min-height: unset;
+  display: block;
 }
 
 .hero-content {
-  padding-top: 20px;
+  padding-top: 24px;
   padding-bottom: 32px;
+}
+
+/* logo */
+.logo-center {
+  margin-top: 0;
 }
 
 .logo-center img {
   margin-bottom: 12px;
 }
 
+/* aproxima título */
+.hero h1 {
+  margin-top: 0;
+}
+
 /* mobile */
 @media (max-width: 768px) {
   .hero-content {
-    padding-top: 18px;
+    padding-top: 20px;
     padding-bottom: 28px;
-  }
-
-  .logo-center img {
-    margin-bottom: 10px;
   }
 }
