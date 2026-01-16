@@ -787,3 +787,47 @@ body {
     padding-top: 88px;
   }
 }
+/* ===============================
+  FOTO SOBRE MIM.
+================================ */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-text {
+  max-width: 100%;
+}
+
+.about-photo {
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo img {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  background: #fff;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .about-photo {
+    margin-top: 40px;
+  }
+
+  .about-photo img {
+    max-width: 280px;
+  }
+}
